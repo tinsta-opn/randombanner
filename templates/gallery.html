@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title> ＠おーぷぬ バナー集</title>
+    
+    <link rel="icon" href="favicon.png">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <p class="title is-size-1-touch">
+                ＠おーぷぬ バナー集
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="container is-fluid is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-center is-align-content-center">
+            {% for banner in banners %}
+            <figure class="image">
+                <img src="{{ banner }}" alt="banner{{ loop.index }}" class="my-2">
+            </figure>
+            {% endfor %}
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                ＠おーぷぬのバナーには上記のバナーがランダムに表示されます。
+                  Special Thanks:武士ニキ
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
