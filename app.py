@@ -23,6 +23,12 @@ def get_banner():
     banner = choice(banners)
     return redirect(url_for(os.path.basename(banner)))
 
+@app.route("/gallery", methods=['GET'])
+def gallery():
+"return gallery"
+banners = glob("./static/banners/*.png")
+return render_template("gallery.html", banners=banners)
+
 class StaticBanner(View):
     "dinamic dispatch class for banner (direct access)"
     methods = ['GET']
