@@ -58,9 +58,3 @@ def after_request(responce):
     return responce
     
 app.run(debug=True, host='0.0.0.0', port=8000)
-
-@app.route("/gallery", methods=['GET'])
-def gallery():
-"return gallery"
-banners = glob("./static/banners/*.png")
-return render_template("gallery.html", banners=banners)
